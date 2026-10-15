@@ -2,6 +2,15 @@ import * as vscode from "vscode";
 import {generateArray, TestMode} from "./generator";
 
 export function activate(context: vscode.ExtensionContext) {
+    /**
+         * Активирует расширение SourceTests и регистрирует команду генерации массива.
+         *
+         * Параметры:
+         *     context (vscode.ExtensionContext): контекст расширения VS Code, используемый для управления подписками.
+         *
+         * Возвращаемое значение:
+         *     void: функция регистрирует команду и не возвращает значение.
+    */
     const command = vscode.commands.registerCommand("sourcetests.generatetest", async () => {
             const sizeInput = await vscode.window.showInputBox({
                 prompt: "Количество элементов массива",
@@ -104,4 +113,14 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(command);
 }
 
-export function deactivate() {}
+export function deactivate() {
+    /**
+        * Выполняет завершение работы расширения SourceTests.
+        *
+        * Параметры:
+        *     отсутствуют.
+        *
+        * Возвращаемое значение:
+        *     void: функция не возвращает значение.
+    */
+}

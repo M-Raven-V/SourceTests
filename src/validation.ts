@@ -5,6 +5,15 @@ export interface TestConfig {
 }
 
 export function validateConfig(config: TestConfig): string | null {
+    /**
+        * Проверяет корректность параметров генерации тестового массива.   
+        *
+        * Параметры:
+        *     config (TestConfig): объект, содержащий размер массива, минимальное и максимальное значения.
+        *
+        * Возвращаемое значение:
+        *     string | null: сообщение об ошибке, если параметры некорректны, или null, если все проверки пройдены успешно.
+     */
     const {size, min, max} = config;
 
     if (!Number.isInteger(size) || size < 1 || size > 100_000) {
